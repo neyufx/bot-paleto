@@ -30,7 +30,7 @@ module.exports = {
 
         message.guild.channels.create(arg3+'-'+arg1+'-'+arg2, {
             type: 'GUILD_TEXT',
-            parent: '976232656322854937', // Créer channel dans la catégorie
+            parent: '977677827145097293', // Créer channel dans la catégorie
             permissionOverwrites: [{
                 id: message.guild.id,
                 deny:['SEND_MESSAGES','VIEW_CHANNEL']

@@ -9,6 +9,7 @@ module.exports = {
         
         db.pool.getConnection(function(err, connection) {
             var today = new Date();
+            today.setHours(today.getHours() + 2);
             var dd = String(today.getDate()).padStart(2, '0');
             var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
             var yyyy = today.getFullYear();
@@ -17,10 +18,10 @@ module.exports = {
             if(args[0]){
                 let user = message.mentions.users.first()
                 let member = message.guild.members.cache.get(user.id);
-                connection.query(`UPDATE employee SET dateViree = "${date}" WHERE userID = "${user.id}"`, function (error, results, fields) {
+                connection.query(`UPDATE employee SET dateViree = "${date}" WHERE dossier = "${message.channel.name}"`, function (error, results, fields) {
                 connection.query(`UPDATE users SET isViree = "${date}" WHERE steamID = "${user.id}"`, function (error, results, fields) {
                 // When done with the connection, release it.
-                message.channel.setParent('976232656322854936');
+                message.channel.setParent('977677827145097293');
                 connection.release();
                 // Handle error after the release.
                 if (error) throw error;

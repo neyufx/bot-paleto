@@ -14,12 +14,12 @@ module.exports = {
         let arg3 = args[2];
            let user = message.mentions.users.first()
            let member = message.guild.members.cache.get(user.id);
-           let role = message.guild.roles.cache.get("976232655593037873"); // Rôle en attente
-           let role2 = message.guild.roles.cache.get("976232655605624882"); // Rôle intérimaire
+           let role = message.guild.roles.cache.get("977677826289467481"); // Rôle en attente
+           let role2 = message.guild.roles.cache.get("977677826310418453"); // Rôle intérimaire
            let channel = message.mentions.channels.first()
            member.roles.remove(role); // Supprime le rôle en attente
            member.roles.add(role2); // Ajout du rôle intérimaire
-           message.channel.setParent('976232656322854937');
+           message.channel.setParent('977677827145097293');
            message.channel.permissionOverwrites.set([
             {
                 id: message.guild.id,
